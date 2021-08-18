@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+      <record id="view_order_form_inherit" model="ir.ui.view">
+            <field name="name">sale.order.form.nordic.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                 <field name="partner_id" position="before">
+                    <field name="user_status" />
+                 </field>
+
+                <xpath expr="//button[@name='action_confirm'][2]" position="replace">
+                   <button name="action_submit"
+                    string="Submit Order" type="object"
+                    attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
+                    <button name="action_approve" type="object"  string="Approve Order"
+                         class="oe_highlight" attrs="{'invisible':[('user_status','!=','pending')]}"/>
+                </xpath>
+                <xpath expr="//button[@name='action_confirm']" position="replace">
+                       <button name="action_submit"
+                        string="Submit Order" type="object" class="btn-primary"
+                        attrs="{'invisible': [('state', 'not in', ['sent'])]}"/>
+                </xpath>
+                <field name="analytic_account_id" position="after">
+                      <field name="quotation_ref" />
+                </field>
+                 <page name="customer_signature" position="after">
+                     <page name="approvers" string="Approvers">
+                         <field name="approver_ids" mode="tree,kanban"   attrs="{'readonly': [('state', 'in',('done','sale'))]}">
+                                <tree editable="bottom" decoration-success="status=='approved'" decoration-warning="status=='pending'" decoration-danger="status=='cancel'">
+<!--                                    <field name="sequence"/>-->
+                                    <field name="user_id" string="Approver" attrs="{'readonly':[('status','!=','draft')]}"/>
+                                    <field name="status"/>
+                                </tree>
+
+                            </field>
+                    </page>
+                 </page>
+            </field>
+      </record>
+
+
+
+     <record id="view_quotation_tree_inherit" model="ir.ui.view">
+            <field name="name">sale.order.tree.quotation.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                    <field name="company_id" position="after">
+                         <field name="approver_ids" widget="many2many_tags" optional="show"/>
+                          <field name="quotation_ref" />
+                    </field>
+            </field>
+      </record>
+
+      <record id="view_order_tree_inherit" model="ir.ui.view">
+            <field name="name">sale.order.tree.nordic.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                    <field name="company_id" position="after">
+                         <field name="approver_ids" widget="many2many_tags" optional="show"/>
+                          <field name="quotation_ref" />
+                    </field>
+            </field>
+      </record>
+
+</odoo>

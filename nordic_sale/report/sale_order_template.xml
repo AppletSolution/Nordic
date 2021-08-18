@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <template id="report_saleorder_document_inherit" inherit_id="sale.report_saleorder_document">
+            <xpath expr="//div[@name='signature']" position="attributes">
+                <attribute name="style">page-break-after:always</attribute>
+            </xpath>
+              <p t-field="doc.note" position="replace"/>
+
+             <xpath expr="//p[@id='fiscal_position_remark']" position="after">
+                <h4 name="h_optional_products"  style="page-break-before:always">
+                    <span>Terms and Condition</span>
+                </h4>
+                  <p t-field="doc.note"/>
+            </xpath>
+
+        </template>
+
+</odoo>
