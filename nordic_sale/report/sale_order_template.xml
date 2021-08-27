@@ -14,5 +14,14 @@
             </xpath>
 
         </template>
+        <template id="report_saleorder_document_inherit_sale_management" inherit_id="sale_management.report_saleorder_document_inherit_sale_management">
+
+             <xpath expr="//h4[@name='h_optional_products']" position="attributes">
+                <attribute name="style">page-break-before:always</attribute>
+            </xpath>
+        </template>
+
+
+
 
 </odoo>

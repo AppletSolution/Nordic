@@ -39,7 +39,17 @@
             </field>
       </record>
 
-
+       <record id="sale_order_view_search_nordic_quotation" model="ir.ui.view">
+            <field name="name">sale.order.search.nordic.quotation</field>
+            <field name="model">sale.order</field>
+             <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+             <field name="priority">50</field>
+             <field name="arch" type="xml">
+                  <xpath expr="//filter[@name='draft']" position="after">
+                    <filter string="To Approve" name="pending" domain="[('state','=','pending')]"/>
+                </xpath>
+            </field>
+        </record>
 
      <record id="view_quotation_tree_inherit" model="ir.ui.view">
             <field name="name">sale.order.tree.quotation.inherit</field>
