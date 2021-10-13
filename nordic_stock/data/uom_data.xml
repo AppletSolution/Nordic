@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+       <record id="product_uom_square_meter" model="uom.uom">
+            <field name="name">m²</field>
+            <field name="category_id" ref="uom.product_uom_categ_vol"/>
+            <field name="factor_inv">10000</field>
+            <field name="uom_type">bigger</field>
+        </record>
+    </data>
+</odoo>
