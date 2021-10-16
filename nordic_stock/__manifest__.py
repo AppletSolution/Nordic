@@ -16,6 +16,9 @@
         'data/uom_data.xml',
         'views/stock_views.xml',
         'views/purchase_view.xml',
+        'report/report_nordic_picking.xml',
+        'report/stock_report_view.xml',
+
     ],
     'installable': True,
     'auto_install': False,

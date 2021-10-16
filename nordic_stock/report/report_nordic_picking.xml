@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="report_nordic_picking">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <div t-if="o.picking_type_id.code=='incoming'">
+                               <h1 class="mt48 mb32" align="center"> Goods Received Note  </h1>
+                            </div>
+                             <div t-if="o.picking_type_id.code=='outgoing'">
+                               <h1 class="mt48 mb32"  align="center"> Material Issue Note  </h1>
+                            </div>
+
+                             <br/>  <br/>
+                            <div class="row">
+                               <div class="col-6" t-if="o.picking_type_id.code=='incoming'">
+                                      <strong>Gate Entry Date: </strong>   <span t-field="o.scheduled_date" class="ml-1"/>
+                               </div>
+
+                                 <div class="col-6" t-if="o.picking_type_id.code=='outgoing'">
+                                      <strong>MIN Date: </strong>   <span t-field="o.scheduled_date" class="ml-1"/>
+                               </div>
+
+
+                                 <div class="col-6">
+                                         <strong>Client Name: </strong>  <span t-field="o.partner_id" class="ml-1"/>
+                               </div>
+
+
+                            </div>
+                             <br/>  <br/>
+                            <div class="row ">
+                               <div class="col-6">
+                                      <strong>Container No/ Truck No:</strong>  <span t-field="o.carrier_tracking_ref" class="ml-1"/>
+                               </div>
+
+                                 <div class="col-3">
+                                          <strong>Time In: </strong> <span t-field="o.time_in" class="ml-1"/>
+                               </div>
+
+                                 <div class="col-3">
+                                          <strong>Time Out: </strong> <span t-field="o.time_out" class="ml-1"/>
+                               </div>
+
+
+                            </div>
+                              <br/>  <br/>
+                             <div class="row">
+                                 <div class="col-6">
+                                  </div>
+                                  <div class="col-6">
+                                      <strong>MR No: </strong>  <span t-field="o.name" class="ml-1"/>
+                                  </div>
+
+                             </div>
+
+                            <br/>
+
+                            <table class="table table-bordered" t-if="o.move_line_ids and o.move_ids_without_package">
+                                <t t-set="i" t-value="1" />
+                                <thead>
+                                    <tr>
+                                         <th>
+                                            <strong>Sr. No</strong>
+                                        </th>
+                                         <th >
+                                            <strong>Model</strong>
+                                        </th>
+
+                                        <th name="th_product">
+                                            <strong>Materials Description</strong>
+                                        </th>
+                                         <th t-if="o.picking_type_id.code=='outgoing'">
+                                            <strong>Request Qty</strong>
+                                        </th>
+
+                                        <th>
+                                            <strong t-if="o.picking_type_id.code=='incoming'" >Receive Qty</strong>
+                                            <strong t-if="o.picking_type_id.code=='outgoing'" >Issued Qty</strong>
+                                        </th>
+                                         <th>
+                                            <strong>CBM</strong>
+                                        </th>
+                                         <th>
+                                            <strong>SQM</strong>
+                                        </th>
+                                         <th>
+                                            <strong>Remark</strong>
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="o.move_ids_without_package" t-as="move">
+                                        <!-- In case you come across duplicated lines, ask NIM or LAP -->
+                                        <t t-foreach="move.move_line_ids" t-as="ml">
+                                            <tr>
+                                                 <td>
+                                                    <span t-esc="i"/>
+                                                      <t t-set="i" t-value="i+1"/>
+                                                 </td>
+                                                 <td>
+                                                      <span t-field="ml.product_id.default_code"/><br/>
+                                                 </td>
+                                                <td>
+                                                    <span t-field="ml.product_id.name"/><br/>
+                                                    <span t-field="ml.product_id.description_picking"/>
+                                                </td>
+                                                 <td t-if="o.picking_type_id.code=='outgoing'">
+                                                      <span t-field="ml.product_uom_qty"/><br/>
+                                                 </td>
+                                                <td>
+                                                    <span t-field="ml.qty_done"/>
+                                                    <span t-field="ml.product_uom_id" />
+                                                </td>
+                                                <td>
+                                                    <span t-field="ml.product_id.volume"/>
+                                                 </td>
+                                                <td>
+                                                     <span t-field="ml.product_id.area"/>
+                                                 </td>
+                                                <td>
+
+                                                 </td>
+
+                                            </tr>
+                                        </t>
+                                    </t>
+                                  </tbody>
+                            </table>
+
+
+                             <table style="width:80%;align:center;float:right" class="table table-bordered" >
+                                           <tr>
+                                            <th rowspan="2"> Space Usage SQM/CBM  </th>  <th> Length  </th> <th> Width </th> <th> Hight   </th>
+                                           </tr>
+                                            <tr>
+                                            <td height="20">   </td>  <td> </td> <td> </td>
+                                           </tr>
+                                           <tr>
+                                            <th rowspan="2"> Handling CBM   </th>  <th> Length  </th> <th> Width </th> <th> Hight   </th>
+                                           </tr>
+                                            <tr>
+                                            <td height="20">   </td>  <td> </td> <td> </td>
+                                           </tr>
+
+                             </table>
+
+                            <p t-if="o.picking_type_id.code=='incoming'" style="color:#dc3545">
+                               The above consignment was received and inspected by the following representatives:
+                            </p>
+
+                            <div class="row">
+
+                                 <div class="col-5">
+                                       <table class="table table-borderless" >
+                                           <tr>
+                                                 <th colspan="2">   Transpoter Representative </th>
+                                           </tr>
+                                           <tr>
+                                                 <td> Name : </td>  <td> </td>
+                                           </tr>
+                                            <tr>
+                                                <td> Position :  </td>  <td> </td>
+                                           </tr>
+                                            <tr>
+                                                 <td> Contact No : </td>  <td> </td>
+                                           </tr>
+                                            <tr>
+                                                <td> Signature :  </td>  <td> </td>
+                                           </tr>
+                                            <tr t-if="o.picking_type_id.code=='outgoing'">
+                                                <td> Vehicle No :  </td>  <td> </td>
+                                           </tr>
+                                       </table>
+
+                                  </div>
+
+                                 <div class="col-7">
+
+                                       <table class="table table-borderless" >
+                                           <tr>
+                                            <th>   </th>  <th>  Warehouse  rep: </th> <th> Warehouse Manager</th>
+                                           </tr>
+                                           <tr>
+                                            <td> Name :  </td>  <td> </td> <td> </td>
+                                           </tr>
+                                            <tr>
+                                            <td> Position :  </td>  <td> </td> <td> </td>
+                                           </tr>
+                                            <tr>
+                                            <td> Contact No :  </td>  <td> </td> <td> </td>
+                                           </tr>
+                                            <tr>
+                                            <td> Signature :  </td>  <td> </td> <td> </td>
+                                           </tr>
+                                            <tr t-if="o.picking_type_id.code=='outgoing'">
+                                                <td> Vehicle No :  </td>  <td> </td>
+                                           </tr>
+                                       </table>
+                                  </div>
+                            </div>
+                            <br/>
+                              <p t-if="o.picking_type_id.code=='outgoing'" style="color:#dc3545">
+                                   If any damages or lost of Material at the outside of warehouse,100% responsibility and aware by representative who pickup the materials .
+
+                            </p>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>
