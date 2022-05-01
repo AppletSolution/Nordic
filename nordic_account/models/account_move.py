@@ -7,7 +7,7 @@ class AccountMove(models.Model):
     _inherit = "account.move"
 
     client_booking_no = fields.Char("Client's Booking No")
-    nodric_booking_no = fields.Char("Nordic's Booking No")
+    nordic_booking_no = fields.Char("Nordic's Booking No")
     cargo_out_date = fields.Date("Cargo Out Date")
     cargo_volume = fields.Float("Cargo Volume")
     commodity = fields.Char("Commodity")
@@ -25,7 +25,6 @@ class AccountMove(models.Model):
     shipment_date = fields.Date("Shipment Date")
     shipment_name = fields.Char("Shipment Name")
     shipment_line_name = fields.Char("Shipment Line Name")
-    transaction_date = fields.Date("Transaction Date")
     track_no_mm = fields.Char("Myanmar Track No")
     track_no_th = fields.Char("Thailand Track No")
     track_type= fields.Char("Track Type")

@@ -14,7 +14,9 @@
     'depends': ['account',],
     'data': [
         'views/account_move_views.xml',
-        'views/report_invoice_inherit.xml',
+        'views/invoice_report_template.xml',
+        'reports/invoice_report.xml',
+
     ],
     'installable': True,
     'auto_install': False,

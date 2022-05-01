@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_invoice_custom_clearance" model="ir.actions.report">
+            <field name="name">Custom Clearance Invoice</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">nordic_account.report_invoice_custom_clearance</field>
+            <field name="report_file">nordic_account.report_invoice_custom_clearance</field>
+            <field name="print_report_name">(object._get_report_base_filename())</field>
+            <field name="attachment">(object.state == 'posted') and ((object.name or 'INV').replace('/','_')+'.pdf')</field>
+            <field name="binding_model_id" ref="model_account_move"/>
+            <field name="binding_type">report</field>
+    </record>
+    <record id="account_invoice_cross_border" model="ir.actions.report">
+            <field name="name">Cross Border Invoice</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">nordic_account.report_invoice_cross_border</field>
+            <field name="report_file">nordic_account.report_invoice_cross_border</field>
+            <field name="print_report_name">(object._get_report_base_filename())</field>
+            <field name="attachment">(object.state == 'posted') and ((object.name or 'INV').replace('/','_')+'.pdf')</field>
+            <field name="binding_model_id" ref="model_account_move"/>
+            <field name="binding_type">report</field>
+    </record>
+    <record id="account_invoice_trucking" model="ir.actions.report">
+            <field name="name">Trucking Invoice</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">nordic_account.report_invoice_trucking</field>
+            <field name="report_file">nordic_account.report_invoice_trucking</field>
+            <field name="print_report_name">(object._get_report_base_filename())</field>
+            <field name="attachment">(object.state == 'posted') and ((object.name or 'INV').replace('/','_')+'.pdf')</field>
+            <field name="binding_model_id" ref="model_account_move"/>
+            <field name="binding_type">report</field>
+    </record>
+    <record id="account_invoice_warehouse" model="ir.actions.report">
+            <field name="name">Warehouse Invoice</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">nordic_account.report_invoice_warehouse</field>
+            <field name="report_file">nordic_account.report_invoice_warehouse</field>
+            <field name="print_report_name">(object._get_report_base_filename())</field>
+            <field name="attachment">(object.state == 'posted') and ((object.name or 'INV').replace('/','_')+'.pdf')</field>
+            <field name="binding_model_id" ref="model_account_move"/>
+            <field name="binding_type">report</field>
+    </record>
+    <record id="account_invoice_cfs" model="ir.actions.report">
+            <field name="name">CFS Invoice</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">nordic_account.report_invoice_cfs</field>
+            <field name="report_file">nordic_account.report_invoice_cfs</field>
+            <field name="print_report_name">(object._get_report_base_filename())</field>
+            <field name="attachment">(object.state == 'posted') and ((object.name or 'INV').replace('/','_')+'.pdf')</field>
+            <field name="binding_model_id" ref="model_account_move"/>
+            <field name="binding_type">report</field>
+    </record>
+    <record id="account_invoice_onestop_service" model="ir.actions.report">
+            <field name="name">One Stop Invoice</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">nordic_account.report_invoice_onestop_service</field>
+            <field name="report_file">nordic_account.report_invoice_onestop_service</field>
+            <field name="print_report_name">(object._get_report_base_filename())</field>
+            <field name="attachment">(object.state == 'posted') and ((object.name or 'INV').replace('/','_')+'.pdf')</field>
+            <field name="binding_model_id" ref="model_account_move"/>
+            <field name="binding_type">report</field>
+    </record>
+    <record id="account_invoice_sea_freight" model="ir.actions.report">
+            <field name="name">Sea Freight Invoice</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">nordic_account.report_invoice_sea_freight</field>
+            <field name="report_file">nordic_account.report_invoice_sea_freight</field>
+            <field name="print_report_name">(object._get_report_base_filename())</field>
+            <field name="attachment">(object.state == 'posted') and ((object.name or 'INV').replace('/','_')+'.pdf')</field>
+            <field name="binding_model_id" ref="model_account_move"/>
+            <field name="binding_type">report</field>
+    </record>
+
+</odoo>

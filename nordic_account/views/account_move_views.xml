@@ -11,11 +11,10 @@
                       <separator />
                           <field name="service_type" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
                            'out_refund', 'out_receipt','entry'))]}" />
-                       <field name="transaction_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
+
                       <field name="client_booking_no" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
                            'out_refund', 'out_receipt','entry'))]}" />
-                      <field name="nodric_booking_no" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
+                      <field name="nordic_booking_no" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
                            'out_refund', 'out_receipt','entry'))]}" />
                        <field name="cargo_out_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
                            'out_refund', 'out_receipt','entry'))]}" />
