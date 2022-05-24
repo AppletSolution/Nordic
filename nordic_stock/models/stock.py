@@ -14,6 +14,7 @@ class StockMove(models.Model):
 
     area = fields.Float('Area(SQM)',related='product_id.area', store=True)
     volume = fields.Float('Volume(CBM)', related='product_id.volume', store=True)
+    pallet = fields.Float('Pallet',related='product_id.pallet', store=True)
 
 
 
@@ -22,3 +23,4 @@ class StockQuant(models.Model):
 
     area = fields.Float('Area(SQM)', related='product_id.area', store=True)
     volume = fields.Float('Volume(CBM)', related='product_id.volume', store=True)
+    pallet = fields.Float('Pallet',related='product_id.pallet', store=True)

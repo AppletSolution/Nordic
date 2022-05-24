@@ -13,6 +13,11 @@
                                 <field name="area" string="Area"/>
                                 <span><field name="area_uom_name"/></span>
                      </div>
+                     <label for="pallet" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}"/>
+                     <div class="o_row" name="pallet" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}">
+                                <field name="pallet" string="Pallet"/>
+
+                     </div>
                 </div>
              </field>
         </record>
@@ -28,6 +33,10 @@
                             <field name="area"/>
                             <span><field name="area_uom_name"/></span>
                         </div>
+                       <label for="pallet"/>
+                        <div class="o_row">
+                            <field name="pallet"/>
+                        </div>
                 </label>
              </field>
         </record>
@@ -40,6 +49,8 @@
               <field name="product_uom_id" position="after">
                    <field name="area"/>
                    <field name="volume"/>
+                   <field name="pallet"/>
+
               </field>
         </field>
         </record>
@@ -52,6 +63,7 @@
               <field name="product_uom_id" position="after">
                    <field name="area"/>
                    <field name="volume"/>
+                   <field name="pallet"/>
               </field>
         </field>
        </record>
@@ -69,6 +81,7 @@
                 <xpath expr="//field[@name='move_ids_without_package']/tree/field[@name='product_uom']" position="after">
                    <field name="area"/>
                    <field name="volume"/>
+                   <field name="pallet"/>
              </xpath>
         </field>
         </record>

@@ -27,23 +27,30 @@ class ProductTemplate(models.Model):
             if len(template.product_variant_ids) == 1:
                 template.product_variant_ids.area = template.area
 
-    wallet = fields.Float('Area', digits='Area')
+    def _set_pallet(self):
+        for template in self:
+            if len(template.product_variant_ids) == 1:
+                template.product_variant_ids.pallet = template.pallet
+
+    pallet = fields.Float('Pallet', inverse='_set_pallet')
     area = fields.Float(
         'Area', compute='_compute_area', inverse='_set_area', digits='Area', store=True)
     area_uom_name = fields.Char(string='Area unit of measure label', compute='_compute_area_uom_name')
 
 
-    @api.depends('product_variant_ids', 'product_variant_ids.area')
+    @api.depends('product_variant_ids', 'product_variant_ids.area','product_variant_ids.pallet')
     def _compute_area(self):
         unique_variants = self.filtered(lambda template: len(template.product_variant_ids) == 1)
         for template in unique_variants:
             template.area = template.product_variant_ids.area
+            template.pallet = template.product_variant_ids.pallet
         for template in (self - unique_variants):
             template.area = 0.0
+            template.pallet = 0.0
 
 
 class ProductProduct(models.Model):
     _inherit = "product.product"
 
     area = fields.Float('Area', digits='Area')
-    wallet = fields.Float('Area', digits='Area')
+    pallet = fields.Float('Pallet')

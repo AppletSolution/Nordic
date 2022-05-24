@@ -88,6 +88,9 @@
                                             <strong>SQM</strong>
                                         </th>
                                          <th>
+                                            <strong>Pallet</strong>
+                                        </th>
+                                         <th>
                                             <strong>Remark</strong>
                                         </th>
 
@@ -121,6 +124,9 @@
                                                  </td>
                                                 <td>
                                                      <span t-field="ml.product_id.area"/>
+                                                 </td>
+                                                 <td>
+                                                     <span t-field="ml.product_id.pallet"/>
                                                  </td>
                                                 <td>
 
