@@ -27,7 +27,7 @@ class ProductTemplate(models.Model):
             if len(template.product_variant_ids) == 1:
                 template.product_variant_ids.area = template.area
 
-
+    wallet = fields.Float('Area', digits='Area')
     area = fields.Float(
         'Area', compute='_compute_area', inverse='_set_area', digits='Area', store=True)
     area_uom_name = fields.Char(string='Area unit of measure label', compute='_compute_area_uom_name')
@@ -46,3 +46,4 @@ class ProductProduct(models.Model):
     _inherit = "product.product"
 
     area = fields.Float('Area', digits='Area')
+    wallet = fields.Float('Area', digits='Area')

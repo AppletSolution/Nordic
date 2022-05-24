@@ -9,79 +9,46 @@
                  <group id="header_left_group" position="inside">
 
                       <separator />
-                          <field name="service_type" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-
-                      <field name="client_booking_no" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                      <field name="nordic_booking_no" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                       <field name="cargo_out_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                       <field name="cargo_volume" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                       <field name="commodity" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
+                          <field name="service_type" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                      <field name="client_booking_no" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                      <field name="nordic_booking_no" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                       <field name="cargo_out_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                       <field name="cargo_volume" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                       <field name="commodity" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
 
                       <separator />
-                       <field name="consignee_name" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                      <field name="container_no" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                      <field name="departure_location" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                      <field name="file_upper_run_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                      <field name="final_destination" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                       <field name="id_ed_no" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                        <field name="no_of_id_ed" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                        <field name="pickup_location" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                      <field name="port_exam_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
+                       <field name="consignee_name" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                      <field name="container_no" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                      <field name="departure_location" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                      <field name="file_upper_run_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                      <field name="final_destination" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                       <field name="id_ed_no" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                        <field name="no_of_id_ed" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                        <field name="pickup_location" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                      <field name="port_exam_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
                  </group>
                  <group id="header_right_group" position="inside">
                       <separator />
 
-                      <field name="job_no" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                     <field name="shipment_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                     <field name="shipment_name" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                     <field name="shipment_line_name" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                     <field name="track_no_mm" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                       <field name="track_no_th" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                      <field name="track_type" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                          <field name="vessel_no" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                       <field name="warehouse_id" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
+                      <field name="job_no" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                     <field name="shipment_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                     <field name="shipment_name" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                     <field name="shipment_line_name" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                     <field name="track_no_mm" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                       <field name="track_no_th" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                      <field name="track_type" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                          <field name="vessel_no" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                       <field name="warehouse_id" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
 
                       <separator />
-                       <field name="eta_ygn_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                       <field name="etd_ygn_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                       <field name="eta_mwd_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                       <field name="etd_mwd_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                       <field name="eta_lcb_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                       <field name="etd_lcb_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                       <field name="eta_sva_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
-                       <field name="etd_sva_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice',
-                           'out_refund', 'out_receipt','entry'))]}" />
+                       <field name="eta_ygn_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                       <field name="etd_ygn_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                       <field name="eta_mwd_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                       <field name="etd_mwd_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                       <field name="eta_lcb_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                       <field name="etd_lcb_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                       <field name="eta_sva_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                       <field name="etd_sva_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
                  </group>
 
 

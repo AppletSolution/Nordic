@@ -39,7 +39,7 @@ class SaleOrder(models.Model):
 
     def action_submit(self):
         if len(self.approver_ids) < 1:
-            raise UserError(_("You have to add at least one approver to confirm your request.") % self.approval_minimum)
+            raise UserError(_("You have to add at least one approver to confirm your request."))
 
         approvers = self.mapped('approver_ids').filtered(lambda approver: approver.status == 'draft')
         approvers._create_activity()
