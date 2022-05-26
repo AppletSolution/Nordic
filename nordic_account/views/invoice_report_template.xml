@@ -8,15 +8,15 @@
                         <strong>Transaction Date:</strong>
                         <p class="m-0" t-field="o.create_date"/>
                   </div>
-                  <div class="col-3 mb-2" t-if="o.job_no" name="job_no">
+                  <div class="col-3 mb-2"  name="job_no">
                         <strong>Job Number:</strong>
                         <p class="m-0" t-field="o.job_no"/>
                     </div>
-                  <div class="col-3 mb-3" t-if="o.service_type" name="service_type">
+                  <div class="col-3 mb-3"  name="service_type">
                         <strong>Service Type:</strong>
                         <p class="m-0" t-field="o.service_type"/>
                     </div>
-                  <div class="col-3 mb-2" t-if="o.commodity" name="commodity">
+                  <div class="col-3 mb-2"  name="commodity">
                         <strong>Commodity :</strong>
                         <p class="m-0" t-field="o.commodity"/>
                   </div>
@@ -61,11 +61,11 @@
 
          </div>
           <div id="custom_clearance_3" class="row mt32 mb32">
-                <div class="col-3 mb-2" t-if="o.consignee_name" name="consignee_name">
+                <div class="col-3 mb-2"  name="consignee_name">
                     <strong>Consignee Name:</strong>
                     <p class="m-0" t-field="o.consignee_name"/>
                </div>
-               <div class="col-3 mb-2" t-if="o.shipment_name" name="shipment_name">
+               <div class="col-3 mb-2" name="shipment_name">
                     <strong>Shipper Name :</strong>
                     <p class="m-0" t-field="o.shipment_name"/>
                </div>
@@ -102,15 +102,15 @@
                         <strong>Transaction Date:</strong>
                         <p class="m-0" t-field="o.create_date"/>
                   </div>
-                  <div class="col-3 mb-2" t-if="o.job_no" name="job_no">
+                  <div class="col-3 mb-2"  name="job_no">
                         <strong>Job Number:</strong>
                         <p class="m-0" t-field="o.job_no"/>
                     </div>
-                  <div class="col-3 mb-3" t-if="o.service_type" name="service_type">
+                  <div class="col-3 mb-3"  name="service_type">
                         <strong>Service Type:</strong>
                         <p class="m-0" t-field="o.service_type"/>
                     </div>
-                  <div class="col-3 mb-2" t-if="o.commodity" name="commodity">
+                  <div class="col-3 mb-2"  name="commodity">
                         <strong>Commodity :</strong>
                         <p class="m-0" t-field="o.commodity"/>
                   </div>
@@ -146,13 +146,13 @@
                     <strong>Container No:</strong>
                     <p class="m-0" t-field="o.container_no"/>
                 </div>
-                <div class="col-3 mb-2" t-if="o.consignee_name" name="consignee_name">
+                <div class="col-3 mb-2"  name="consignee_name">
                     <strong>Consignee Name:</strong>
                     <p class="m-0" t-field="o.consignee_name"/>
                </div>
           </div>
           <div id="cross_border_3" class="row mt32 mb32">
-               <div class="col-3 mb-2" t-if="o.shipment_name" name="shipment_name">
+               <div class="col-3 mb-2"  name="shipment_name">
                     <strong>Shipper Name :</strong>
                     <p class="m-0" t-field="o.shipment_name"/>
                </div>
@@ -171,15 +171,15 @@
                         <strong>Transaction Date:</strong>
                         <p class="m-0" t-field="o.create_date"/>
                   </div>
-                  <div class="col-3 mb-2" t-if="o.job_no" name="job_no">
+                  <div class="col-3 mb-2"  name="job_no">
                         <strong>Job Number:</strong>
                         <p class="m-0" t-field="o.job_no"/>
                     </div>
-                  <div class="col-3 mb-3" t-if="o.service_type" name="service_type">
+                  <div class="col-3 mb-3"  name="service_type">
                         <strong>Service Type:</strong>
                         <p class="m-0" t-field="o.service_type"/>
                     </div>
-                  <div class="col-3 mb-2" t-if="o.commodity" name="commodity">
+                  <div class="col-3 mb-2"  name="commodity">
                         <strong>Commodity :</strong>
                         <p class="m-0" t-field="o.commodity"/>
                   </div>
@@ -229,25 +229,25 @@
                         <strong>Transaction Date:</strong>
                         <p class="m-0" t-field="o.create_date"/>
                   </div>
-                  <div class="col-3 mb-2" t-if="o.job_no" name="job_no">
+                  <div class="col-3 mb-2"  name="job_no">
                         <strong>Job Number:</strong>
                         <p class="m-0" t-field="o.job_no"/>
                     </div>
-                  <div class="col-3 mb-3" t-if="o.service_type" name="service_type">
+                  <div class="col-3 mb-3"  name="service_type">
                         <strong>Service Type:</strong>
                         <p class="m-0" t-field="o.service_type"/>
                     </div>
-                  <div class="col-3 mb-2" t-if="o.commodity" name="commodity">
+                  <div class="col-3 mb-2"  name="commodity">
                         <strong>Commodity :</strong>
                         <p class="m-0" t-field="o.commodity"/>
                   </div>
              </div>
             <div id="warehouse" class="row mt32 mb32">
-                 <div class="col-3 mb-3" t-if="o.service_type" name="warehouse_id">
+                 <div class="col-3 mb-3"  name="warehouse_id">
                         <strong>Warehouse Location :</strong>
                         <p class="m-0" t-field="o.warehouse_id"/>
                     </div>
-                  <div class="col-3 mb-2" t-if="o.commodity" name="cargo_volume">
+                  <div class="col-3 mb-2"  name="cargo_volume">
                         <strong>Cargo Volume :</strong>
                         <p class="m-0" t-field="o.cargo_volume"/>
                   </div>

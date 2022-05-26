@@ -15,6 +15,7 @@
     'data': [
         'views/account_move_views.xml',
         'views/invoice_report_template.xml',
+        'views/res_config_settings_view.xml',
         'reports/invoice_report.xml',
 
     ],

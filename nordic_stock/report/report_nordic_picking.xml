@@ -13,6 +13,9 @@
                              <div t-if="o.picking_type_id.code=='outgoing'">
                                <h1 class="mt48 mb32"  align="center"> Material Issue Note  </h1>
                             </div>
+                            <div t-if="o.picking_type_id.code=='internal'">
+                               <h1 class="mt48 mb32"  align="center"> Internal Transfer  </h1>
+                            </div>
 
                              <br/>  <br/>
                             <div class="row">
@@ -73,14 +76,10 @@
                                         <th name="th_product">
                                             <strong>Materials Description</strong>
                                         </th>
-                                         <th t-if="o.picking_type_id.code=='outgoing'">
-                                            <strong>Request Qty</strong>
-                                        </th>
-
-                                        <th>
-                                            <strong t-if="o.picking_type_id.code=='incoming'" >Receive Qty</strong>
-                                            <strong t-if="o.picking_type_id.code=='outgoing'" >Issued Qty</strong>
-                                        </th>
+                                         <th >
+                                            <strong t-if="o.picking_type_id.code=='outgoing'">Issued Qty</strong>
+                                             <strong t-if="o.picking_type_id.code=='internal'"> Qty</strong>
+                                             <strong t-if="o.picking_type_id.code=='incoming'" >Receive Qty</strong>                                        </th>
                                          <th>
                                             <strong>CBM</strong>
                                         </th>
@@ -112,13 +111,13 @@
                                                     <span t-field="ml.product_id.name"/><br/>
                                                     <span t-field="ml.product_id.description_picking"/>
                                                 </td>
-                                                 <td t-if="o.picking_type_id.code=='outgoing'">
-                                                      <span t-field="ml.product_uom_qty"/><br/>
+                                                 <td >
+                                                      <span t-field="ml.product_uom_qty" t-if="o.picking_type_id.code=='outgoing'"/>
+                                                       <span t-field="ml.qty_done" t-if="not o.picking_type_id.code=='outgoing'"/>
+
+                                                     <span t-field="ml.product_uom_id" />
                                                  </td>
-                                                <td>
-                                                    <span t-field="ml.qty_done"/>
-                                                    <span t-field="ml.product_uom_id" />
-                                                </td>
+
                                                 <td>
                                                     <span t-field="ml.product_id.volume"/>
                                                  </td>
