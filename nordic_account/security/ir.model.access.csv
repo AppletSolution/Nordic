@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_report_partner_ledger_billing,access.account.report.partner.ledger.billing,accounting_pdf_reports.model_account_report_partner_ledger,account.group_account_invoice,1,1,1,1
+access_account_aged_trial_balance_billing,access.account.aged.trial.balance.billing,accounting_pdf_reports.model_account_aged_trial_balance,account.group_account_invoice,1,1,1,1

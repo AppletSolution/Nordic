@@ -36,6 +36,12 @@
                             </field>
                     </page>
                  </page>
+                  <xpath expr="//group[@name='note_group']/group[@colspan='4']" position="replace"/>
+                   <xpath expr="//div[@class='oe_clear']" position="after">
+                        <group colspan="6">
+                                    <field name="note" nolabel="1" placeholder="Terms and conditions..."/>
+                        </group>
+                   </xpath>
             </field>
       </record>
 

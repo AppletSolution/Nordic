@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+     <template id="report_invoice_common_inherit_document" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@class='page']/h2" position="replace">
+            <h4>
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'">Invoice</span>
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
+                <span t-if="o.move_type == 'out_refund'">Credit Note</span>
+                <span t-if="o.move_type == 'in_refund'">Vendor Credit Note</span>
+                <span t-if="o.move_type == 'in_invoice'">Vendor Bill</span>
+                <span t-if="o.name != '/'" t-field="o.name"/>
+            </h4>
+
+        </xpath>
+     </template>
     <template id="report_invoice_custom_clearance_document" inherit_id="account.report_invoice_document" primary="True">
         <xpath expr="//div[@id='informations']" position="after">
              <div id="informations_1" class="row mt32 mb32">
@@ -36,13 +50,13 @@
                     <p class="m-0" t-field="o.nordic_booking_no"/>
                 </div>
                <div class="col-3 mb-2"  name="client_booking_no">
-                    <strong>Client's Booking No:</strong>
+                    <strong>Booking No:</strong>
                     <p class="m-0" t-field="o.client_booking_no"/>
                 </div>
            </div>
            <div id="custom_clearance_2" class="row mt32 mb32">
                <div class="col-3 mb-2" name="vessel_no">
-                    <strong>Vessel No:</strong>
+                    <strong>Vessel Name:</strong>
                     <p class="m-0" t-field="o.vessel_no"/>
                 </div>
                <div class="col-3 mb-2" name="container_no">
@@ -92,6 +106,14 @@
                      <strong>ID /ED No  :</strong>
                     <p class="m-0" t-field="o.id_ed_no"/>
               </div>
+               <div class="col-3 mb-2"  name="quotation_ref">
+                     <strong>Quotation No.  :</strong>
+                    <p class="m-0" t-field="o.quotation_ref"/>
+               </div>
+               <div class="col-3 mb-2"  name="hawb">
+                     <strong>HAWB  :</strong>
+                    <p class="m-0" t-field="o.hawb"/>
+               </div>
            </div>
         </xpath>
     </template>
@@ -160,7 +182,29 @@
                     <strong>No of ED/ID :</strong>
                     <p class="m-0" t-field="o.no_of_id_ed"/>
                </div>
+               <div class="col-3 mb-2"  name="quotation_ref">
+                     <strong>Quotation No.  :</strong>
+                    <p class="m-0" t-field="o.quotation_ref"/>
+               </div>
+               <div class="col-3 mb-2"  name="bl_no">
+                     <strong>BL No.  :</strong>
+                    <p class="m-0" t-field="o.bl_no"/>
+               </div>
+               <div class="col-3 mb-2"  name="truck_way_bill">
+                     <strong>Truck Way Bill  :</strong>
+                    <p class="m-0" t-field="o.truck_way_bill"/>
+               </div>
 
+          </div>
+          <div id="cross_border_4" class="row mt32 mb32">
+                <div class="col-3 mb-2"  name="hawb">
+                     <strong>HAWB  :</strong>
+                    <p class="m-0" t-field="o.hawb"/>
+               </div>
+                <div class="col-3 mb-2"  name="mawb">
+                     <strong>MAWB  :</strong>
+                    <p class="m-0" t-field="o.mawb"/>
+               </div>
           </div>
         </xpath>
     </template>
@@ -202,13 +246,13 @@
                     <p class="m-0" t-field="o.final_destination"/>
                  </div>
           </div>
-          <div id="trucking_2" class="row mt32 mb32">
+           <div id="trucking_2" class="row mt32 mb32">
                <div class="col-3 mb-2"  name="pickup_location">
                     <strong>Pickup Location :</strong>
                     <p class="m-0" t-field="o.pickup_location"/>
                  </div>
                <div class="col-3 mb-2"  name="nordic_booking_no">
-                    <strong>Nordic Booking No:</strong>
+                    <strong> Booking No:</strong>
                     <p class="m-0" t-field="o.nordic_booking_no"/>
                 </div>
                 <div class="col-3 mb-2"  name="client_booking_no">
@@ -219,7 +263,14 @@
                     <strong>Container No :</strong>
                     <p class="m-0" t-field="o.container_no"/>
                  </div>
-          </div>
+
+           </div>
+           <div id="trucking_3" class="row mt32 mb32">
+                   <div class="col-3 mb-2"  name="quotation_ref">
+                     <strong>Quotation No.  :</strong>
+                    <p class="m-0" t-field="o.quotation_ref"/>
+               </div>
+           </div>
         </xpath>
     </template>
     <template id="account_invoice_warehouse_document" inherit_id="account.report_invoice_document" primary="True">
@@ -251,6 +302,10 @@
                         <strong>Cargo Volume :</strong>
                         <p class="m-0" t-field="o.cargo_volume"/>
                   </div>
+                 <div class="col-3 mb-2"  name="quotation_ref">
+                     <strong>Quotation No.  :</strong>
+                    <p class="m-0" t-field="o.quotation_ref"/>
+                 </div>
             </div>
         </xpath>
     </template>
@@ -294,7 +349,7 @@
             </div>
              <div id="cfs_2" class="row mt32 mb32">
                <div class="col-3 mb-2"  name="nordic_booking_no">
-                    <strong>Nordic Booking No:</strong>
+                    <strong> Booking No:</strong>
                     <p class="m-0" t-field="o.nordic_booking_no"/>
                 </div>
                 <div class="col-3 mb-2"  name="client_booking_no">
@@ -306,7 +361,7 @@
                     <p class="m-0" t-field="o.container_no"/>
                  </div>
                <div class="col-3 mb-2"  name="vessel_no">
-                    <strong>Vessel No :</strong>
+                    <strong>Vessel Name :</strong>
                     <p class="m-0" t-field="o.vessel_no"/>
                </div>
           </div>
@@ -337,6 +392,10 @@
                     <strong>ID /ED No:</strong>
                     <p class="m-0" t-field="o.id_ed_no"/>
                 </div>
+                <div class="col-3 mb-2"  name="quotation_ref">
+                     <strong>Quotation No.  :</strong>
+                    <p class="m-0" t-field="o.quotation_ref"/>
+                 </div>
           </div>
         </xpath>
     </template>
@@ -385,7 +444,7 @@
                         <p class="m-0" t-field="o.departure_location"/>
                   </div>
                <div class="col-3 mb-2"  name="nordic_booking_no">
-                    <strong>Nordic Booking No:</strong>
+                    <strong> Booking No:</strong>
                     <p class="m-0" t-field="o.nordic_booking_no"/>
                 </div>
                 <div class="col-3 mb-2"  name="client_booking_no">
@@ -400,7 +459,7 @@
           </div>
           <div id="onestop_service_3" class="row mt32 mb32">
                <div class="col-3 mb-2"  name="vessel_no">
-                    <strong>Vessel No :</strong>
+                    <strong>Vessel Name :</strong>
                     <p class="m-0" t-field="o.vessel_no"/>
                </div>
                <div class="col-3 mb-2"  name="warehouse_id">
@@ -429,6 +488,10 @@
                     <strong>ID /ED No:</strong>
                     <p class="m-0" t-field="o.id_ed_no"/>
                 </div>
+                <div class="col-3 mb-2"  name="quotation_ref">
+                     <strong>Quotation No.  :</strong>
+                    <p class="m-0" t-field="o.quotation_ref"/>
+                 </div>
           </div>
         </xpath>
     </template>
@@ -472,7 +535,7 @@
             </div>
              <div id="sea_freight_2" class="row mt32 mb32">
                <div class="col-3 mb-2"  name="nordic_booking_no">
-                    <strong>Nordic Booking No:</strong>
+                    <strong>Booking No:</strong>
                     <p class="m-0" t-field="o.nordic_booking_no"/>
                 </div>
                 <div class="col-3 mb-2"  name="client_booking_no">
@@ -484,7 +547,7 @@
                     <p class="m-0" t-field="o.container_no"/>
                  </div>
                <div class="col-3 mb-2"  name="vessel_no">
-                    <strong>Vessel No :</strong>
+                    <strong>Vessel Name :</strong>
                     <p class="m-0" t-field="o.vessel_no"/>
                </div>
           </div>
@@ -515,6 +578,14 @@
                     <strong>ID /ED No:</strong>
                     <p class="m-0" t-field="o.id_ed_no"/>
                 </div>
+                <div class="col-3 mb-2"  name="quotation_ref">
+                     <strong>Quotation No.  :</strong>
+                    <p class="m-0" t-field="o.quotation_ref"/>
+                 </div>
+                <div class="col-3 mb-2"  name="bl_no">
+                     <strong>BL No.  :</strong>
+                    <p class="m-0" t-field="o.bl_no"/>
+                 </div>
           </div>
         </xpath>
     </template>

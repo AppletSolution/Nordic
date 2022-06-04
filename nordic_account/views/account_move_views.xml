@@ -6,17 +6,22 @@
             <field name="model">account.move</field>
             <field name="inherit_id" ref="account.view_move_form"/>
             <field name="arch" type="xml">
+                <field name="payment_reference" position="after">
+                    <field name="quotation_ref"/>
+                </field>
                  <group id="header_left_group" position="inside">
-
                       <separator />
                           <field name="service_type" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
-                      <field name="client_booking_no" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
-                      <field name="nordic_booking_no" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                       <field name="client_booking_no" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                      <field name="nordic_booking_no" string="Booking No" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
                        <field name="cargo_out_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
                        <field name="cargo_volume" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
                        <field name="commodity" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
-
-                      <separator />
+                       <field name="bl_no" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                        <field name="hawb" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                       <field name="mawb" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                        <field name="truck_way_bill" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
+                     <separator />
                        <field name="consignee_name" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
                       <field name="container_no" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
                       <field name="departure_location" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
@@ -54,4 +59,19 @@
 
              </field>
       </record>
+
+     <menuitem id="accounting_pdf_reports.menu_partner_ledger"
+              name="Partner Ledger"
+              sequence="5"
+              parent="accounting_pdf_reports.menu_finance_partner_reports"
+              action="accounting_pdf_reports.action_account_partner_ledger_menu"
+              groups="account.group_account_invoice" />
+
+      <menuitem id="accounting_pdf_reports.menu_aged_trial_balance"
+                groups="account.group_account_invoice"
+              name="Aged Partner Balance"
+              sequence="10"
+              action="accounting_pdf_reports.action_account_aged_balance_view"
+              parent="accounting_pdf_reports.menu_finance_partner_reports"/>/>
+
 </odoo>

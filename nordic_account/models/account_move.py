@@ -7,7 +7,7 @@ class AccountMove(models.Model):
     _inherit = "account.move"
 
     client_booking_no = fields.Char("Client's Booking No")
-    nordic_booking_no = fields.Char("Nordic's Booking No")
+    nordic_booking_no = fields.Char("Booking No")
     cargo_out_date = fields.Date("Cargo Out Date")
     cargo_volume = fields.Float("Cargo Volume")
     commodity = fields.Char("Commodity")
@@ -28,8 +28,8 @@ class AccountMove(models.Model):
     track_no_mm = fields.Char("Myanmar Track No")
     track_no_th = fields.Char("Thailand Track No")
     track_type= fields.Char("Track Type")
-    vessel_no = fields.Char("Vessel No")
-    warehouse_id = fields.Many2one('stock.warehouse')
+    vessel_no = fields.Char("Vessel Name")
+    warehouse_id = fields.Many2one('stock.warehouse',string="Warehouse Location")
     eta_ygn_date = fields.Date("ETA YGN ")
     etd_ygn_date = fields.Date("ETD YGN ")
     eta_mwd_date = fields.Date("ETA MWD ")
@@ -38,3 +38,10 @@ class AccountMove(models.Model):
     etd_lcb_date = fields.Date("ETD LCB ")
     eta_sva_date = fields.Date("ETA SVA ")
     etd_sva_date = fields.Date("ETD SVA ")
+
+    quotation_ref = fields.Char(string='Quotation Reference', copy=False)
+    bl_no = fields.Char("BL No")
+    hawb = fields.Char("HAWB")
+    mawb = fields.Char("MAWB")
+    truck_way_bill =  mawb = fields.Char("Truck Way Bill")
+

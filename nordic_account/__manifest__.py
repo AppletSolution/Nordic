@@ -17,6 +17,7 @@
         'views/invoice_report_template.xml',
         'views/res_config_settings_view.xml',
         'reports/invoice_report.xml',
+        'security/ir.model.access.csv',
 
     ],
     'installable': True,

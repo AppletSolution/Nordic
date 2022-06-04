@@ -154,9 +154,11 @@
 
                              </table>
 
-                            <p t-if="o.picking_type_id.code=='incoming'" style="color:#dc3545">
-                               The above consignment was received and inspected by the following representatives:
-                            </p>
+                              <div class="row" t-if="o.picking_type_id.code=='incoming'" style="color:#dc3545">
+                                  <p>
+                                      The above consignment was received and inspected by the following representatives:
+                                  </p>
+                              </div>
 
                             <div class="row">
 

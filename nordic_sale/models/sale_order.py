@@ -97,6 +97,7 @@ class SaleOrder(models.Model):
 
         invoice_vals = {
             'ref': self.client_order_ref or '',
+            'quotation_ref': self.quotation_ref or '',
             'move_type': 'out_invoice',
             'narration': False,
             'currency_id': self.pricelist_id.currency_id.id,
