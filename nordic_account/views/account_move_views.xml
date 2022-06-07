@@ -60,18 +60,6 @@
              </field>
       </record>
 
-     <menuitem id="accounting_pdf_reports.menu_partner_ledger"
-              name="Partner Ledger"
-              sequence="5"
-              parent="accounting_pdf_reports.menu_finance_partner_reports"
-              action="accounting_pdf_reports.action_account_partner_ledger_menu"
-              groups="account.group_account_invoice" />
 
-      <menuitem id="accounting_pdf_reports.menu_aged_trial_balance"
-                groups="account.group_account_invoice"
-              name="Aged Partner Balance"
-              sequence="10"
-              action="accounting_pdf_reports.action_account_aged_balance_view"
-              parent="accounting_pdf_reports.menu_finance_partner_reports"/>/>
 
 </odoo>
