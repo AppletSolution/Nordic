@@ -43,5 +43,5 @@ class AccountMove(models.Model):
     bl_no = fields.Char("BL No")
     hawb = fields.Char("HAWB")
     mawb = fields.Char("MAWB")
-    truck_way_bill =  mawb = fields.Char("Truck Way Bill")
+    truck_way_bill = fields.Char("Truck Way Bill")
 

@@ -55,11 +55,18 @@
                        <field name="eta_sva_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
                        <field name="etd_sva_date" attrs="{'invisible': [('move_type', 'not in', ('out_invoice','out_refund'))]}" />
                  </group>
-
+                <field name="narration" position="replace">
+                     <div class="oe_clear"/>
+                     <group colspan="6">
+                                    <field name="narration" nolabel="1" placeholder="Terms and conditions..."/>
+                      </group>
+                </field>
 
              </field>
       </record>
 
-
+    <record model="ir.ui.menu" id="accounting_pdf_reports.menu_partner_ledger">
+      <field name="groups_id" eval="[(6,0,[ref('account.group_account_invoice')])]"/>
+    </record>
 
 </odoo>

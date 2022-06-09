@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-     <template id="report_invoice_common_inherit_document" inherit_id="account.report_invoice_document">
+
+    <template id="report_invoice_custom_clearance_document" inherit_id="account.report_invoice_document" primary="True">
+
+
         <xpath expr="//div[@class='page']/h2" position="replace">
-            <h4>
+            <h2 style="font-size:20px">
                 <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'">Invoice</span>
                 <span t-if="o.move_type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
                 <span t-if="o.move_type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
@@ -11,11 +14,9 @@
                 <span t-if="o.move_type == 'in_refund'">Vendor Credit Note</span>
                 <span t-if="o.move_type == 'in_invoice'">Vendor Bill</span>
                 <span t-if="o.name != '/'" t-field="o.name"/>
-            </h4>
+            </h2>
 
         </xpath>
-     </template>
-    <template id="report_invoice_custom_clearance_document" inherit_id="account.report_invoice_document" primary="True">
         <xpath expr="//div[@id='informations']" position="after">
              <div id="informations_1" class="row mt32 mb32">
                   <div class="col-3 mb-2" name="create_date">
@@ -110,14 +111,30 @@
                      <strong>Quotation No.  :</strong>
                     <p class="m-0" t-field="o.quotation_ref"/>
                </div>
-               <div class="col-3 mb-2"  name="hawb">
+
+           </div>
+
+             <div id="custom_clearance_4" class="row mt32 mb32">
+                  <div class="col-3 mb-2"  name="hawb">
                      <strong>HAWB  :</strong>
                     <p class="m-0" t-field="o.hawb"/>
                </div>
-           </div>
+             </div>
         </xpath>
     </template>
     <template id="report_invoice_cross_border_document" inherit_id="account.report_invoice_document" primary="True">
+        <xpath expr="//div[@class='page']/h2" position="replace">
+            <h2 style="font-size:20px">
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'">Invoice</span>
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
+                <span t-if="o.move_type == 'out_refund'">Credit Note</span>
+                <span t-if="o.move_type == 'in_refund'">Vendor Credit Note</span>
+                <span t-if="o.move_type == 'in_invoice'">Vendor Bill</span>
+                <span t-if="o.name != '/'" t-field="o.name"/>
+            </h2>
+
+        </xpath>
         <xpath expr="//div[@id='informations']" position="after">
              <div id="informations_cross_border" class="row mt32 mb32">
                   <div class="col-3 mb-2" name="create_date">
@@ -209,6 +226,18 @@
         </xpath>
     </template>
     <template id="report_invoice_trucking_document" inherit_id="account.report_invoice_document" primary="True">
+        <xpath expr="//div[@class='page']/h2" position="replace">
+            <h2 style="font-size:20px">
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'">Invoice</span>
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
+                <span t-if="o.move_type == 'out_refund'">Credit Note</span>
+                <span t-if="o.move_type == 'in_refund'">Vendor Credit Note</span>
+                <span t-if="o.move_type == 'in_invoice'">Vendor Bill</span>
+                <span t-if="o.name != '/'" t-field="o.name"/>
+            </h2>
+
+        </xpath>
         <xpath expr="//div[@id='informations']" position="after">
              <div id="informations_trucking" class="row mt32 mb32">
                   <div class="col-3 mb-2" name="create_date">
@@ -274,6 +303,18 @@
         </xpath>
     </template>
     <template id="account_invoice_warehouse_document" inherit_id="account.report_invoice_document" primary="True">
+          <xpath expr="//div[@class='page']/h2" position="replace">
+            <h2 style="font-size:20px">
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'">Invoice</span>
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
+                <span t-if="o.move_type == 'out_refund'">Credit Note</span>
+                <span t-if="o.move_type == 'in_refund'">Vendor Credit Note</span>
+                <span t-if="o.move_type == 'in_invoice'">Vendor Bill</span>
+                <span t-if="o.name != '/'" t-field="o.name"/>
+            </h2>
+
+        </xpath>
        <xpath expr="//div[@id='informations']" position="after">
              <div id="informations_warehouse" class="row mt32 mb32">
                   <div class="col-3 mb-2" name="create_date">
@@ -310,6 +351,18 @@
         </xpath>
     </template>
      <template id="report_invoice_cfs_document" inherit_id="account.report_invoice_document" primary="True">
+           <xpath expr="//div[@class='page']/h2" position="replace">
+            <h2 style="font-size:20px">
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'">Invoice</span>
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
+                <span t-if="o.move_type == 'out_refund'">Credit Note</span>
+                <span t-if="o.move_type == 'in_refund'">Vendor Credit Note</span>
+                <span t-if="o.move_type == 'in_invoice'">Vendor Bill</span>
+                <span t-if="o.name != '/'" t-field="o.name"/>
+            </h2>
+
+        </xpath>
          <xpath expr="//div[@id='informations']" position="after">
               <div id="informations_cfs" class="row mt32 mb32">
                   <div class="col-3 mb-2" name="create_date">
@@ -400,6 +453,18 @@
         </xpath>
     </template>
      <template id="report_invoice_onestop_service_document" inherit_id="account.report_invoice_document" primary="True">
+           <xpath expr="//div[@class='page']/h2" position="replace">
+            <h2 style="font-size:20px">
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'">Invoice</span>
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
+                <span t-if="o.move_type == 'out_refund'">Credit Note</span>
+                <span t-if="o.move_type == 'in_refund'">Vendor Credit Note</span>
+                <span t-if="o.move_type == 'in_invoice'">Vendor Bill</span>
+                <span t-if="o.name != '/'" t-field="o.name"/>
+            </h2>
+
+        </xpath>
         <xpath expr="//div[@id='informations']" position="after">
               <div id="informations_onestop_service" class="row mt32 mb32">
                   <div class="col-3 mb-2" name="create_date">
@@ -496,6 +561,18 @@
         </xpath>
     </template>
     <template id="report_invoice_sea_freight_document" inherit_id="account.report_invoice_document" primary="True">
+         <xpath expr="//div[@class='page']/h2" position="replace">
+            <h2 style="font-size:20px">
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'">Invoice</span>
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
+                <span t-if="o.move_type == 'out_refund'">Credit Note</span>
+                <span t-if="o.move_type == 'in_refund'">Vendor Credit Note</span>
+                <span t-if="o.move_type == 'in_invoice'">Vendor Bill</span>
+                <span t-if="o.name != '/'" t-field="o.name"/>
+            </h2>
+
+        </xpath>
         <xpath expr="//div[@id='informations']" position="after">
                 <div id="informations_sea_freight" class="row mt32 mb32">
                   <div class="col-3 mb-2" name="create_date">
