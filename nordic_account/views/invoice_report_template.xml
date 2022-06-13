@@ -3,9 +3,6 @@
 
 
     <template id="report_invoice_custom_clearance_document" inherit_id="account.report_invoice_document" primary="True">
-        <xpath expr="//div[@class='page']/h2" position="attributes">
-            <attribute name="style">font-size:22px</attribute>
-        </xpath>
 
         <xpath expr="//div[@id='informations']" position="after">
              <div id="informations_1" class="row mt32 mb32">
@@ -113,9 +110,7 @@
         </xpath>
     </template>
     <template id="report_invoice_cross_border_document" inherit_id="account.report_invoice_document" primary="True">
-         <xpath expr="//div[@class='page']/h2" position="attributes">
-            <attribute name="style">font-size:22px</attribute>
-        </xpath>
+
         <xpath expr="//div[@id='informations']" position="after">
              <div id="informations_cross_border" class="row mt32 mb32">
                   <div class="col-3 mb-2" name="create_date">
@@ -188,7 +183,7 @@
                      <strong>BL No.  :</strong>
                     <p class="m-0" t-field="o.bl_no"/>
                </div>
-               
+
 
           </div>
           <div id="cross_border_4" class="row mt32 mb32">
@@ -208,9 +203,7 @@
         </xpath>
     </template>
     <template id="report_invoice_trucking_document" inherit_id="account.report_invoice_document" primary="True">
-         <xpath expr="//div[@class='page']/h2" position="attributes">
-            <attribute name="style">font-size:22px</attribute>
-        </xpath>
+
         <xpath expr="//div[@id='informations']" position="after">
              <div id="informations_trucking" class="row mt32 mb32">
                   <div class="col-3 mb-2" name="create_date">
@@ -276,9 +269,7 @@
         </xpath>
     </template>
     <template id="account_invoice_warehouse_document" inherit_id="account.report_invoice_document" primary="True">
-         <xpath expr="//div[@class='page']/h2" position="attributes">
-            <attribute name="style">font-size:22px</attribute>
-        </xpath>
+
        <xpath expr="//div[@id='informations']" position="after">
              <div id="informations_warehouse" class="row mt32 mb32">
                   <div class="col-3 mb-2" name="create_date">
@@ -315,9 +306,7 @@
         </xpath>
     </template>
      <template id="report_invoice_cfs_document" inherit_id="account.report_invoice_document" primary="True">
-         <xpath expr="//div[@class='page']/h2" position="attributes">
-            <attribute name="style">font-size:22px</attribute>
-        </xpath>
+
          <xpath expr="//div[@id='informations']" position="after">
               <div id="informations_cfs" class="row mt32 mb32">
                   <div class="col-3 mb-2" name="create_date">
@@ -408,9 +397,7 @@
         </xpath>
     </template>
      <template id="report_invoice_onestop_service_document" inherit_id="account.report_invoice_document" primary="True">
-         <xpath expr="//div[@class='page']/h2" position="attributes">
-            <attribute name="style">font-size:22px</attribute>
-        </xpath>
+
         <xpath expr="//div[@id='informations']" position="after">
               <div id="informations_onestop_service" class="row mt32 mb32">
                   <div class="col-3 mb-2" name="create_date">
@@ -507,9 +494,7 @@
         </xpath>
     </template>
     <template id="report_invoice_sea_freight_document" inherit_id="account.report_invoice_document" primary="True">
-         <xpath expr="//div[@class='page']/h2" position="attributes">
-            <attribute name="style">font-size:22px</attribute>
-        </xpath>
+
         <xpath expr="//div[@id='informations']" position="after">
                 <div id="informations_sea_freight" class="row mt32 mb32">
                   <div class="col-3 mb-2" name="create_date">
